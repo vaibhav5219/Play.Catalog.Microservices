@@ -1,0 +1,21 @@
+# docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+# docker ps
+# docker stop mongo
+# docker-compose up 
+# ctrl + c
+# docker-compose up -d
+
+
+version: '24.0.6'
+
+services:
+  Mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodbdata:/data/db
+
+volumes:
+  mongodbdata:
