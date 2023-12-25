@@ -1,0 +1,29 @@
+Create .net web api repo    =>  dotnet new webapi -n Play.Catalog.Service --framework net5.0
+Create .net class library   =>  dotnet new classlib -n Play.Common --framework net5.0
+Build  			    =>  dotnet build
+Run    			    =>  dotnet run
+Enable https certs          =>  dotnet dev-certs https --trust
+Add MongoDB driver package  =>  dotnet add package MongoDB.Driver
+Add MS Extension config     =>  dotnet add package Microsoft.Extensions.Configuration
+Add MS Ext conf binder      =>  dotnet add package Microsoft.Extensions.Configuration.Binder
+Add MS Ext Dependency Inj   =>  dotnet add package Microsoft.Extensions.DependencyInjection
+Create package of class lib =>  dotnet pack -o ..\..\..\packages\
+Provide package location    =>  dotnet nuget add source D:\projects\packages -n PlayEconomy
+Provide pack ref in csproj  => dotnet add package Play.Common
+
+#################################################################################
+
+Docker Commands
+
+Run docker container => docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+
+running image => docker ps
+Starting MongoDB  => docker-compose up -d
+
+
+
+
+
+
+
+
