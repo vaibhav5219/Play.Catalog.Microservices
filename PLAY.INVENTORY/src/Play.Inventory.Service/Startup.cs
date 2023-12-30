@@ -52,6 +52,23 @@ namespace Play.Inventory.Service
 
                 }
             ))
+            .AddTransientHttpErrorPolicy(builder => builder.Or<TimeoutException>().CircuitBreakerAsync(
+                3,                          // Three times request , cicuit is open for
+                TimeSpan.FromSeconds(15),    // 15 seconds tak error rhega 
+                onBreak: (outcome, timespan) => 
+                {
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?
+                            .LogWarning($"Opening the circuit for {timespan.TotalSeconds} seconds... ");
+                },
+                onReset: ()=>
+                {
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?
+                            .LogWarning($"Closing the circuit...");
+                } 
+
+            ))
             .AddPolicyHandler(Polly.Policy.TimeoutAsync<HttpResponseMessage>(1));
 
             services.AddControllers();
