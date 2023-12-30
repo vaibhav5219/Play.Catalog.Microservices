@@ -11,6 +11,9 @@ Create package of class lib =>  dotnet pack -o ..\..\..\packages\
 Provide package location    =>  dotnet nuget add source D:\projects\packages -n PlayEconomy
 Provide pack ref in csproj  =>  dotnet add package Play.Common
 Add MS Polly Package	    =>  dotnet add package Microsoft.Extensions.Http.Polly
+Add ref to any repo         =>  dotnet add reference ..\path\of\repo\of\csproj --framework net5.0
+Adding MassTransit package  =>  dotnet add package MassTransit.AspNetCore
+Add RabbitMQ                =>  dotnet add package MassTransit.RabbitMQ
 
 	#################################################################################
 
