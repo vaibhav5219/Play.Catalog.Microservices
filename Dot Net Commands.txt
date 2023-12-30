@@ -6,12 +6,13 @@ Enable https certs          =>  dotnet dev-certs https --trust
 Add MongoDB driver package  =>  dotnet add package MongoDB.Driver
 Add MS Extension config     =>  dotnet add package Microsoft.Extensions.Configuration
 Add MS Ext conf binder      =>  dotnet add package Microsoft.Extensions.Configuration.Binder
-Add MS Ext Dependency Inj   =>  dotnet add pac kage Microsoft.Extensions.DependencyInjection
+Add MS Ext Dependency Inj   =>  dotnet add package Microsoft.Extensions.DependencyInjection
 Create package of class lib =>  dotnet pack -o ..\..\..\packages\
 Provide package location    =>  dotnet nuget add source D:\projects\packages -n PlayEconomy
 Provide pack ref in csproj  =>  dotnet add package Play.Common
+Add MS Polly Package	    =>  dotnet add package Microsoft.Extensions.Http.Polly
 
-#################################################################################
+	#################################################################################
 
 Docker Commands
 
