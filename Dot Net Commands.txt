@@ -14,6 +14,7 @@ Add MS Polly Package	    =>  dotnet add package Microsoft.Extensions.Http.Polly
 Add ref to any repo         =>  dotnet add reference ..\path\of\repo\of\csproj --framework net5.0
 Adding MassTransit package  =>  dotnet add package MassTransit.AspNetCore
 Add RabbitMQ                =>  dotnet add package MassTransit.RabbitMQ
+Create nuget pkg with ver   =>  dotnet pack -p:PackageVersion=1.1.0 -o ..\..\..\packages\
 
 	#################################################################################
 
